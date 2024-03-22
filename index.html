@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Bookshelf Apps</title>
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="dist/output.css">
+
+
+</head>
+
+<body class="bg-[#F1F4F5] font-['Poppins']">
+    <!-- HEADER START -->
+    <header class="text-4xl font-bold text-white flex items-center justify-center bg-blue-950 p-4">Bookshelf Apps
+    </header>
+    <!-- HEADER END -->
+
+
+    <!-- INPUT SECTION START -->
+    <section class="input_section max-w-4xl mx-auto mt-5 pt-3 shadow-xl rounded-lg bg-white">
+        <h2 class="text-2xl font-bold text-center text-blue-950">Add New Book</h2>
+        <form id="inputBook" class="p-5 flex flex-col gap-y-2">
+            <div class="input flex flex-col">
+                <label for="inputBookTitle" class="text-lg font-bold text-blue-950">Title</label>
+                <input id="inputBookTitle" type="text" required="" class="border-2 p-2 rounded-md">
+            </div>
+            <div class="input flex flex-col">
+                <label for="inputBookAuthor" class="text-lg font-bold text-blue-950">Author</label>
+                <input id="inputBookAuthor" type="text" required="" class="border-2 p-2 rounded-md">
+            </div>
+            <div class="input flex flex-col">
+                <label for="inputBookYear" class="text-lg font-bold text-blue-950">Year</label>
+                <input id="inputBookYear" type="number" required="" class="border-2 p-2 rounded-md">
+            </div>
+            <div class="input_inline flex flex-row gap-x-2 items-center">
+                <label for="inputBookIsComplete" class="text-lg font-bold text-blue-950">Done Reading</label>
+                <input id="inputBookIsComplete" type="checkbox">
+            </div>
+            <button id="bookSubmit" type="submit"
+                class="text-lg bg-blue-950 text-white block rounded-md py-1.5 hover:bg-blue-800">Put books on the
+                <span class="font-bold">Uncompleted Shelf</span></button>
+        </form>
+    </section>
+    <!-- INPUT SECTION END -->
+
+
+    <!-- SEARCH SECTION START -->
+    <section class="search_section max-w-4xl mx-auto mt-5 py-5 shadow-xl rounded-lg bg-white">
+        <h2 class="text-2xl font-bold text-center text-blue-950"> Search Books </h2>
+        <form id="searchBook" class="flex flex-row gap-x-2.5 items-center justify-center mt-3">
+            <label for="searchBookTitle" class="text-lg font-bold text-blue-950">Title</label>
+            <input id="searchBookTitle" type="text" onkeyup="searchBooks()" placeholder="Input the book title"
+                class="border-2 px-4 py-2 rounded-md w-1/2">
+        </form>
+    </section>
+    <!-- SEARCH SECTION END -->
+
+    <!-- INCOMPLETED SECTION START-->
+    <section class="book_shelf max-w-4xl mx-auto mt-5 p-4 shadow-xl rounded-lg bg-white mb-6">
+        <h2 class="text-2xl font-bold text-blue-950 mb-6">Incompleted Reading</h2>
+
+        <div id="incompletedBookShelfList" class="book_list flex flex-col gap-y-2"></div>
+    </section>
+    <!-- INCOMPLETED SECTION END-->
+
+    <!-- COMPLETED SECTION START -->
+    <section class="book_shelf max-w-4xl mx-auto mt-5 p-4 shadow-xl rounded-lg bg-white mb-6">
+        <h2 class="text-2xl font-bold text-blue-950 mb-6">Completed Reading</h2>
+
+        <div id="completedBookShelfList" class="book_list flex flex-col gap-y-2"></div>
+    </section>
+    <!-- COMPLETED SECTION END -->
+
+
+    <script src="dist/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
